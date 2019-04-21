@@ -56,8 +56,10 @@ public class AppAdapter extends ArrayAdapter<App> {
 //        안되었다면? 가격을 띄워줌. 3,500,000원 의 양식.
 
         if (appData.isMine) {
-//            내가 설치한 항목일 경우 설치한 항목 글자를 그대로 표시.
-//            실제 코딩은 하지 않았음.
+//            내가 설치한 항목일 경우에는 반드시 설치된 항목이라고 띄우도록 명령.
+//            재사용성 때문에 원하지 않는 데이터가 나올 수 있음.
+
+            priceOrInstalledTxt.setText("설치된 항목");
 
         }
         else {

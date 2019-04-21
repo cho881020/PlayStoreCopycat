@@ -23,6 +23,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/rankAndTitleTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#000000"
@@ -36,6 +37,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/companyNameTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="게임회사이름"/>
@@ -54,22 +56,27 @@
                 android:orientation="horizontal">
                 
                 <ImageView
+                    android:id="@+id/star1"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:src="@drawable/star_empty"/>
                 <ImageView
+                    android:id="@+id/star2"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:src="@drawable/star_empty"/>
                 <ImageView
+                    android:id="@+id/star3"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:src="@drawable/star_empty"/>
                 <ImageView
+                    android:id="@+id/star4"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:src="@drawable/star_empty"/>
                 <ImageView
+                    android:id="@+id/star5"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:src="@drawable/star_empty"/>
@@ -83,6 +90,7 @@
                 android:gravity="right">
 
                 <TextView
+                    android:id="@+id/priceOrInstalledTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="설치된 항목"

@@ -54,8 +54,9 @@ public class MainActivity extends AppCompatActivity {
                 App clickedAppData = appList.get(position);
 
                 Intent intent = new Intent(MainActivity.this, AppDetailActivity.class);
-                intent.putExtra("제목", clickedAppData.title);
-                intent.putExtra("회사이름", clickedAppData.companyName);
+//                intent.putExtra("제목", clickedAppData.title);
+//                intent.putExtra("회사이름", clickedAppData.companyName);
+                intent.putExtra("앱정보", clickedAppData);
                 startActivity(intent);
 
 

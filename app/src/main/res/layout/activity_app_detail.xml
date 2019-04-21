@@ -63,6 +63,7 @@
                 android:textSize="20sp"/>
 
             <TextView
+                android:id="@+id/userRatingTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#000000"
@@ -79,18 +80,21 @@
             android:orientation="horizontal">
 
             <Button
+                android:id="@+id/removeBtn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="제거하기"/>
 
             <Button
+                android:id="@+id/launchBtn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="실행하기"/>
 
             <Button
+                android:id="@+id/purchaseBtn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

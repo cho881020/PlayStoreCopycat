@@ -1,6 +1,8 @@
 package com.tj.playstorecopycat.datas;
 
-public class App {
+import java.io.Serializable;
+
+public class App implements Serializable {
 
     public int rank; // 순위
     public String title; // 앱 제목

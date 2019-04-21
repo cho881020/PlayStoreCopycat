@@ -1,5 +1,6 @@
 package com.tj.playstorecopycat;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -48,7 +49,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Toast.makeText(MainActivity.this, String.format("%d번 줄 클릭", position), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(MainActivity.this, String.format("%d번 줄 클릭", position), Toast.LENGTH_SHORT).show();
+
+                App clickedAppData = appList.get(position);
+
+                Intent intent = new Intent(MainActivity.this, AppDetailActivity.class);
+                intent.putExtra("제목", clickedAppData.title);
+                intent.putExtra("회사이름", clickedAppData.companyName);
+                startActivity(intent);
+
 
             }
         });

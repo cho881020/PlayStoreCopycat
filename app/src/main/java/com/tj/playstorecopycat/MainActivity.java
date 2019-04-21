@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.tj.playstorecopycat.adapters.AppAdapter;
 import com.tj.playstorecopycat.databinding.ActivityMainBinding;
 import com.tj.playstorecopycat.datas.App;
 
@@ -12,6 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
+    AppAdapter mAppAdapter;
 
     List<App> appList = new ArrayList<>();
 
@@ -24,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
 
         fillApps();
 
-
+        mAppAdapter = new AppAdapter(MainActivity.this, appList);
+        act.appRankListView.setAdapter(mAppAdapter);
 
     }
 

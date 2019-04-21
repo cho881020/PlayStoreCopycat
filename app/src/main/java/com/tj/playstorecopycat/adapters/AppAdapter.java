@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 import com.tj.playstorecopycat.R;
 import com.tj.playstorecopycat.datas.App;
@@ -38,6 +39,13 @@ public class AppAdapter extends ArrayAdapter<App> {
         }
 
 //        실질적으로 상황에 맞게 머리를 써야하는 부분.
+
+//        각 줄에 맞는 앱 데이터를 mList에서 추출.
+        App appData = mList.get(position);
+
+        TextView rankAndTitleTxt = row.findViewById(R.id.rankAndTitleTxt);
+        TextView companyNameTxt = row.findViewById(R.id.companyNameTxt);
+        TextView priceOrInstalledTxt = row.findViewById(R.id.priceOrInstalledTxt);
 
 
 

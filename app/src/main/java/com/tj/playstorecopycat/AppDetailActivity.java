@@ -5,6 +5,7 @@ import android.databinding.DataBindingUtil;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.tj.playstorecopycat.databinding.ActivityAppDetailBinding;
@@ -59,6 +60,14 @@ public class AppDetailActivity extends AppCompatActivity {
                 Intent intent = new Intent(Intent.ACTION_DIAL, phoneUri);
                 startActivity(intent);
 
+            }
+        });
+
+
+        act.dateTxt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("텍스트뷰클릭!", "실제로 동작하나?");
             }
         });
 

@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.tj.playstorecopycat.databinding.ActivityAppDetailBinding;
 import com.tj.playstorecopycat.datas.App;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class AppDetailActivity extends AppCompatActivity {
@@ -93,7 +94,17 @@ public class AppDetailActivity extends AppCompatActivity {
 //                        같은 메쏘드인데, arg 의 종류/갯수에 따라 다른 행동을함. => overloading 의 예시.
 
 
+//                        cal에 저장된 값을 String으로 (양식에 맞게) 바꿔서 TextView에 세팅.
+//                        날짜를 양식으로 바꾸고 싶을때 : SimpleDateFormat을 사용.
 
+//                        어떤 양식으로 문자를 출력할지 지정. 양식 지정.
+                        SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 M월 d일");
+
+//                        지정된 양식을 통해 Calendar 변수를 String으로 변환.
+                        String dateStr = sdf.format(cal.getTimeInMillis());
+
+//                        만들어진 String을 화면에 출력.
+                        act.dateTxt.setText(dateStr);
 
 
 

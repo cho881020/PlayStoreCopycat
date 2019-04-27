@@ -1,7 +1,9 @@
 package com.tj.playstorecopycat;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -42,6 +44,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 //                Toast.makeText(MainActivity.this, "확인버튼을 눌렀습니다.", Toast.LENGTH_SHORT).show();
 
+
+//                확인 버튼만 있도록 AlertDialog.
+
+                AlertDialog.Builder okAlert = new AlertDialog.Builder(MainActivity.this);
+//                okAlert.setTitle("게임 추가 알림");
+                okAlert.setMessage("임시 게임이 추가됩니다.");
+                okAlert.setPositiveButton("확인", null);
+                okAlert.show();
+
+
                 appList.add(new App(10, "임시 게임", "미상", 4, 39800, false));
                 mAppAdapter.notifyDataSetChanged();
 
@@ -78,9 +90,25 @@ public class MainActivity extends AppCompatActivity {
 
 //                Toast.makeText(MainActivity.this, String.format("%d번 줄을 오래 누름", position), Toast.LENGTH_SHORT).show();
 
-                appList.remove(position);
 
-                mAppAdapter.notifyDataSetChanged();
+                final int finalPosition = position;
+
+                AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
+                alert.setTitle("앱 삭제 확인");
+                alert.setMessage("정말 이 앱을 삭제하시겠습니까?");
+                alert.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        appList.remove(finalPosition);
+
+                        mAppAdapter.notifyDataSetChanged();
+
+                        Toast.makeText(MainActivity.this, "해당 앱이 삭제되었습니다.", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                alert.setNegativeButton("취소", null);
+                alert.show();
+
 
 
                 return true;

@@ -21,12 +21,14 @@
             android:text="최저 평점"/>
 
         <EditText
+            android:id="@+id/minRatingEdt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:hint="여기에 입력된 평점 미만의 앱은 걸러냅니다."/>
 
         <Button
+            android:id="@+id/okBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="확인"/>
